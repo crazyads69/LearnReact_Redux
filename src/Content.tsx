@@ -1,6 +1,7 @@
-type Props = { permission: undefined | string[] };
+import { useAppContext } from './AppContext';
 
-export function Content({ permission }: Props) {
+export function Content() {
+    const { permission } = useAppContext();
     if (permission === undefined) {
         return null;
     }
