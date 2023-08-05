@@ -1,7 +1,8 @@
-import { useAppContext } from './AppContext';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/store';
 
 export function Content() {
-    const { permission } = useAppContext();
+    const permission = useSelector((state: RootState) => state.user.permission);
     if (permission === undefined) {
         return null;
     }
